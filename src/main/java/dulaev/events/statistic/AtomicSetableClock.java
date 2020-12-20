@@ -5,10 +5,10 @@ import java.time.temporal.TemporalAmount;
 import java.util.concurrent.atomic.AtomicReference;
 
 public class AtomicSetableClock implements Clock {
-    private AtomicReference<Instant> now;
+    private final AtomicReference<Instant> now;
 
     public AtomicSetableClock(Instant now) {
-        this.now = new AtomicReference<Instant>(now);
+        this.now = new AtomicReference<>(now);
     }
 
     public void setNow(Instant now) {
